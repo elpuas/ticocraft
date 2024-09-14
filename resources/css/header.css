@@ -1,0 +1,37 @@
+.site-header {
+    background-color: var(--preset-color-tertiary);
+    color: var(--preset-color-white);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--preset-spacing-half) var(--preset-spacing-base);
+
+    .site-logo {
+        font-size: var(--preset-font-size-huge);
+        font-weight: bold;
+        margin-left: 10px;
+        color: var(--preset-color-white);
+    }
+
+    .primary-navigation {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 50%;
+
+        .site-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: max-content;
+            list-style: none;
+
+            .nav-link {
+                color: var(--preset-color-white);
+                text-decoration: none;
+                margin-left: 10px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

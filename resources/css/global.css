@@ -1,0 +1,33 @@
+:root {
+    --preset-color-primary: #0095f6;
+    --preset-color-secondary: #1c1e21;
+    --preset-color-tertiary: #737373;
+    --preset-color-white: #ffffff;
+    --preset-color-black: #000000;
+    --preset-color-gray-100: #F0F0F0;
+
+    --preset-font-family: 'Roboto', sans-serif;
+    --preset-font-size-base: 16px;
+    --preset-font-size-small: 0.8rem;
+    --preset-font-size-large: 1.2rem;
+    --preset-font-size-huge: 2rem;
+
+    --preset-spacing-base: 1rem;
+    --preset-spacing-half: 0.5rem;
+    --preset-spacing-double: 2rem;
+    --preset-spacing-quadruple: 4rem;
+}
+
+body {
+    font-family: var(--preset-font-family);
+    font-size: var(--preset-font-size-base);
+    margin: 0;
+    padding: 0;
+    background-color: var(--preset-color-gray-100);
+}
+
+main {
+    padding: var(--preset-spacing-base);
+    max-width: 1200px;
+    margin: 0 auto;
+}
