@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -15,7 +16,7 @@ class RegisterController extends Controller
 
     public function store( Request $request )
     {
-        // dd($request->get('name'));
+        $request->request->add(['username' => Str::slug( $request->username )]);
 
         // Validate the user
         $validate = $request->validate([
@@ -29,10 +30,19 @@ class RegisterController extends Controller
         {
             User::create([
                 'name'     => $request->name,
-                'username' => Str::slug( $request->username ),
+                'username' => $request->username,
                 'email'    => $request->email,
                 'password' => bcrypt($request->password),
             ]);
+        }
+
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $attempt = Auth::attempt(['email' => $email, 'password' => $password]);
+
+        if ( $attempt )
+        {
+            return redirect()->route('post.index');
         }
     }
 }
